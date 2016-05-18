@@ -1,8 +1,15 @@
 classdef MySQLDatabase_test < matlab.unittest.TestCase
-    
+    % Unit Test for MySQLDatabase. 
+    %  Run using runtest command 
+    %  e.g.
+    %    runtest(path_to_folder_containing_unit_test)
+    %
+    %   
     % this user operates on schema 'test'
     % GRANT USAGE ON *.* TO 'test_user'@'localhost' IDENTIFIED BY PASSWORD '*C83F5917FBCCAABBF440436C9A977C383E850272'
     % GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, DROP, ALTER, EXECUTE ON `test`.* TO 'test_user'@'localhost'
+        
+    
     properties (SetAccess = private,Hidden=true)        
         hostName ='localhost';              %The database host
         userName ='test_user';              %The userName for the database

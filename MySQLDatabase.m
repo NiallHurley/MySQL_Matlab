@@ -6,7 +6,7 @@
 %     Can be used to query and return data (use method 'getData')
 %     or to execute statements which do not return data (use method 'query')
 % 
-%     methods of interest: open, close, getData, query (the latter verify if
+%     methods of interest: Open, Close, GetData, Query (the latter verify if
 %     connection is open before proceeding). 
 % 
 %   Examples:
@@ -16,13 +16,13 @@
 %     p.verbose = true;
 %     disp(p)
 %     % then either execute a query:
-%     p.query('UPDATE `all_info_db`.`contract_info` SET `Active Start Date`=''2015-02-01'' WHERE `ID`=''1'';');
+%     p.Query('UPDATE `all_info_db`.`contract_info` SET `Active Start Date`=''2015-02-01'' WHERE `ID`=''1'';');
 % 
 %     % or get data using a select query:
-%     p.query('select * from all_info_db.contract_info order by id desc  limit 3');
-%     [data,fieldNames] = p.getData();
+%     p.Query('select * from all_info_db.contract_info order by id desc  limit 3');
+%     [data,fieldNames] = p.GetData();
 % 
-%     Note that the getData method will execute a query (i.e. UPDATE/INSERT but
+%     Note that the GetData method will execute a query (i.e. UPDATE/INSERT but
 %     will return an error as there is no data to be returned.
 % 
 %     Useful information:
@@ -34,10 +34,6 @@
 %  on http://uk.mathworks.com/help/database/ug/mysql-jdbc-windows.html
 %  under the heading
 %  "Step 2. Add the JDBC driver to the MATLAB static Java class path."
-% Alternatively 
-%  
-
-
 
 classdef MySQLDatabase < handle
     properties (SetAccess = protected)
